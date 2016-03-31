@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Desafio 2</title>
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+		<!-- Calculadora PHP. Autor: Raoni Cunha
+			Calcula o reultado das quatro operacoes fundamentais entre dois numeros fornecidos pelo usuario.-->
+		<fieldset>
+			<legend>Calculadora PHP</legend>
+			<form method="post" action="web11_desafio02.php">
+				<label for="">Escolha um numero:</label><input type="text" id="num1" name="num1" required /><br />
+				<label for="">Escolha outro numero:</label><input type="text" id="num2" name="num2" required /><br />
+				<fieldset>
+					<legend>Escolha a operacao:</legend>
+					<input type="radio" id="operacao" name="operacao" value="soma" />Adicao
+					<br />
+					<input type="radio" id="operacao" name="operacao" value="subtracao" />Subtracao
+					<br />
+					<input type="radio" id="operacao" name="operacao" value="multiplicacao" />Multiplicacao
+					<br />
+					<input type="radio" id="operacao" name="operacao" value="divisao" />Divisao
+					<br />
+				</fieldset>
+				<input type="submit" value="Calcular" name="calcular" />
+			</form>
+		</fieldset>
+	</body>
+</html>
