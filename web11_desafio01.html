@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<script type="text/javascript">
+			/*Desafio 1 - Autor: Raoni Cunha
+			Preenche uma serie de numeros aleatorios baseados na quantidade que o usuario escolheu
+			e a seguir informa o maior e o menor valor.*/
+			function numeros() {
+	    		
+	    		//1) Pega a quantidade de elementos informada no formulario.
+	    		var quantidade = document.getElementById('quantidade').value;
+	    		var numeros = [];
+
+	    		//2) Preenche um array com os numeros aleatorios de -10 a 10 na quantidade que o usuario informou no passo 1.
+	    		for (var i = 0; i < quantidade; i++) {
+
+	    			var sinal = Math.random();				//obs: O sinal positivo ou negativo também é definido aleatoriamente.
+	    			sinal < 0.5 ? sinal = -1 : sinal = 1;
+	    			var newN = Math.floor(Math.random()*10 * sinal);
+	    			numeros.push(newN);
+	    		}
+
+	    		var maior = numeros[0];				//obs: Para começar, o maior e menor valor são igualados ao valor da primeira
+	    		var menor = numeros[0];				//posição do array para serem comparados a seguir.
+
+	    		//3) Compara os numeros do array e verifica o maior e menor dentre eles.
+	    		for (var i = 0; i < numeros.length; i++) {
+
+	    			if (numeros[i]>maior) {
+	    				maior = numeros[i];
+	    			}
+	    			if (numeros[i] < menor) {
+	    				menor = numeros[i];
+	    			}
+	    		}
+	       		
+	       		document.write("Os numeros escolhidos foram " + numeros);
+	       		document.write("<br />Maior número: " + maior);
+	       		document.write("<br />Menor número: " + menor);
+	       	}
+		</script>		
+	</head>
+	<body>
+		<h2>Desafio 1</h2>
+		<br />
+		<form onsubmit="numeros()">
+			<label for="entrada">Digite a quantidade de numeros a serem avaliados:</label>
+			<input type="text" id="quantidade" name="entrada" />
+			<input type="submit" value="Manda bala!" name="submit" />
+		</form>
+		
+	</body>
+</html>
